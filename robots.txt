@@ -1,0 +1,62 @@
+# robots.txt for sukithorne.com
+# Blocks AI training crawlers while allowing search engines
+
+# Allow Google, Bing, etc. to index your site (good for discoverability)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Block OpenAI's crawler
+User-agent: GPTBot
+Disallow: /
+
+# Block OpenAI's browsing feature
+User-agent: ChatGPT-User
+Disallow: /
+
+# Block Google's AI training crawler (separate from search)
+User-agent: Google-Extended
+Disallow: /
+
+# Block Common Crawl (used by many AI companies)
+User-agent: CCBot
+Disallow: /
+
+# Block Anthropic's crawler
+User-agent: anthropic-ai
+Disallow: /
+
+# Block Cohere's crawler
+User-agent: cohere-ai
+Disallow: /
+
+# Block Meta/Facebook AI crawler
+User-agent: FacebookBot
+Disallow: /
+
+# Block Bytedance/TikTok crawler
+User-agent: Bytespider
+Disallow: /
+
+# Block Amazon's crawler
+User-agent: Amazonbot
+Disallow: /
+
+# Block Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# Block AI search engines
+User-agent: YouBot
+Disallow: /
+
+# Default rule for any other AI crawlers
+User-agent: *
+Disallow: /ai-training/
+Disallow: /manuscripts/
+Disallow: /excerpts/
