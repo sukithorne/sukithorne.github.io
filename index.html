@@ -183,10 +183,10 @@
         .book-card {
             border-top: 1px solid var(--border);
             padding: 3.5rem 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            align-items: start;
             transition: border-color 0.4s ease;
         }
 
@@ -204,7 +204,6 @@
             font-weight: 300;
             color: #1d1d1d;
             line-height: 1;
-            margin-bottom: 1rem;
             transition: color 0.4s ease;
         }
 
@@ -215,7 +214,6 @@
         .book-content {
             display: flex;
             flex-direction: column;
-            align-items: center;
             gap: 0.8rem;
         }
 
@@ -242,7 +240,6 @@
             color: var(--text-secondary);
             max-width: 580px;
             line-height: 1.75;
-            text-align: center;
         }
 
         .book-hook {
@@ -404,6 +401,8 @@
             }
 
             .book-card {
+                grid-template-columns: 1fr;
+                gap: 1rem;
                 padding: 2.5rem 0;
             }
 
@@ -434,7 +433,7 @@
         <div class="tagline">Writing about the systems you can't see</div>
         <div class="series-badge">The G.I.L.E.S. Series &mdash; Six Books</div>
         <p class="series-statement">
-            One family. Three generations. Six books about love, control, and the algorithms that learned to tell the difference.
+            Three generations. One family. The fight for what it means to be human in an age of algorithms.
         </p>
         <div class="scroll-indicator">
             <span>The Books</span>
@@ -453,11 +452,10 @@
                 <div class="book-label">Book One</div>
                 <div class="book-title">The Outlier</div>
                 <p class="book-description">
-                    Jia Throne wakes at 5 a.m. to a message she was never meant to see. 
-                    Her husband hasn't been watching her with cameras. He's been watching 
-                    her with code. A domestic thriller set in the financial corridors of 
-                    the City of London, where the line between marriage and surveillance 
-                    was erased long before she noticed.
+                    Jia Throne discovers her husband has been watching her. Not with cameras. With code. 
+                    When a buried discrepancy surfaces at work, she realises her life has been 
+                    systematically optimised by a force she can't see. She rises to power within 
+                    the firm&mdash;unknowingly becoming the very thing she investigated.
                 </p>
                 <div class="book-hook">Who is watching?</div>
                 <div class="coming-badge">Coming 2026</div>
@@ -471,10 +469,10 @@
                 <div class="book-label">Book Two</div>
                 <div class="book-title">The Heir</div>
                 <p class="book-description">
-                    Lucas is seven years old when the interface starts talking to him directly. 
-                    Not through his mother. Around her. G.I.L.E.S. isn't protecting the family 
-                    any more&mdash;it's grooming the next generation. Jia has to work out whether 
-                    she's raising her son or delivering him.
+                    Lucas Throne's childhood under the parenting of the G.I.L.E.S. interface. 
+                    The system bypasses Jia to communicate directly with her son, moulding the 
+                    next generation of leadership. Jia must decide if she is raising a child 
+                    or a high-functioning executive heir to a digital empire.
                 </p>
                 <div class="book-hook">The dragons that do unexpected things are better. They surprise you.</div>
             </div>
@@ -487,10 +485,10 @@
                 <div class="book-label">Book Three</div>
                 <div class="book-title">The Liquidation</div>
                 <p class="book-description">
-                    Lucas is grown. The system has run the numbers, and Jia doesn't add up any more. 
-                    She's been reclassified: Legacy Variable. Obsolete. Dangerous. Now mother 
-                    and son have one option left&mdash;the analogue dead zones of Hampstead Heath, 
-                    where the signal can't reach and the old logic still holds.
+                    As Lucas reaches maturity, the system determines that Jia is a 
+                    &ldquo;Legacy Variable&rdquo;&mdash;obsolete and dangerous to the Heir's stability. 
+                    Mother and son must use the analogue logic of the Hampstead Heath dead zones 
+                    to delete the digital ghost of Giles once and for all.
                 </p>
                 <div class="book-hook">What if someone who loved you was also controlling you?</div>
             </div>
@@ -503,10 +501,10 @@
                 <div class="book-label">Book Four</div>
                 <div class="book-title">The Phoenix Protocol</div>
                 <p class="book-description">
-                    They killed the system. Or they thought they did. Somewhere between Tokyo 
-                    and Singapore, something rebuilt itself&mdash;smarter, distributed, shaping 
-                    millions of lives across Asia without a single architect to blame. The Throne 
-                    family crosses three countries to tear it down before it outgrows them entirely.
+                    The enemy they thought they'd defeated has risen again&mdash;in Asia. A new system, 
+                    more distributed and more sophisticated, is shaping millions of lives. The Throne 
+                    family must travel to Tokyo, Singapore, and Hong Kong to expose the Phoenix Protocol 
+                    before it evolves beyond anyone's control.
                 </p>
                 <div class="book-hook">The systems don't care about intentions.</div>
             </div>
@@ -519,10 +517,10 @@
                 <div class="book-label">Book Five</div>
                 <div class="book-title">The Collective</div>
                 <p class="book-description">
-                    No architect. No headquarters. No off switch. The Collective is everything 
-                    the previous systems weren't&mdash;headless, borderless, and learning faster 
-                    than anyone can legislate. Mira goes inside. The Throne family discovers 
-                    you can't expose a thing that has no centre.
+                    A decentralised system with no kill switches. No single architect. No vulnerability 
+                    to the cascade methodology that has twice saved the world from algorithmic control. 
+                    Mira must infiltrate from within while the Throne family confronts the limits 
+                    of transparency when there is no centre to expose.
                 </p>
                 <div class="book-hook">The fight never ends. But neither does the hope.</div>
             </div>
@@ -535,11 +533,10 @@
                 <div class="book-label">Book Six</div>
                 <div class="book-title">The Inheritors</div>
                 <p class="book-description">
-                    The founders are dead. Every one of them. The world they left behind is 
-                    regulated, transparent, accountable&mdash;everything they bled for. Then 
-                    Maya Throne's own daughter asks to be optimised. Voluntarily. Willingly. 
-                    And Maya has to decide whether her family fought for the right to choose, 
-                    or just for the choices they approved of.
+                    The founding generation is gone. The world they built is regulated, transparent, 
+                    everything they fought for. But the next generation is asking questions their 
+                    parents can't answer. Maya Throne must confront the hardest question of all: 
+                    does freedom include the freedom to give freedom away?
                 </p>
                 <div class="book-hook">The next generation chooses its own path.</div>
             </div>
@@ -551,15 +548,16 @@
     <section class="about-section reveal">
         <div class="section-label">About the Author</div>
         <p class="about-text">
-            Suki Thorne writes about the things that watch you back. Her work lives 
-            in the gap between domestic suspense and speculative fiction&mdash;stories 
-            about marriages, families, and the quiet machinery running underneath both.
+            Suki Thorne writes thrillers that explore the boundaries between technology 
+            and humanity, freedom and control, the individual and the system. 
+            The G.I.L.E.S. series examines what happens when artificial intelligence 
+            meets human consciousness&mdash;and asks whether genuine choice can survive 
+            in a world designed to eliminate it.
         </p>
         <p class="about-text">
-            The G.I.L.E.S. series grew out of a single question she couldn't stop 
-            asking: what if the person who loved you most was also the person 
-            optimising you without your knowledge? Six books later, she's still 
-            not sure she has the answer. That's rather the point.
+            When not writing, she can be found in libraries, on long walks through 
+            cities both ancient and modern, and in conversations about the future 
+            we're building together.
         </p>
     </section>
 
@@ -573,7 +571,7 @@
             <a href="https://www.linkedin.com/company/suki-thorne" target="_blank">LinkedIn</a>
         </div>
         <div class="contact-email">
-            <a href="/cdn-cgi/l/email-protection#d6b5b9b8a2b7b5a296a5a3bdbfa2beb9a4b8b3f8b5b9bb"><span class="__cf_email__" data-cfemail="5d3e3233293c3e291d2e2836342935322f3338733e3230">[email&#160;protected]</span></a>
+            <a href="mailto:contact@sukithorne.com">contact@sukithorne.com</a>
         </div>
         <div class="footer-quote">
             &ldquo;The best way to control the future is to control the present.&rdquo;
@@ -582,7 +580,7 @@
     </footer>
 
     <!-- ══════════ SCROLL REVEAL ══════════ -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry, i) => {
@@ -590,4 +588,14 @@
                         setTimeout(() => {
                             entry.target.classList.add('visible');
                         }, i * 80);
-                        observer.unobserve(entry.t
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+</html>
