@@ -4,220 +4,598 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suki Thorne | Thriller Author</title>
-    <meta name="description" content="Suki Thorne - British-Chinese thriller author and creator of the G.I.L.E.S. Trilogy. Domestic suspense exploring AI, surveillance, and control.">
+    <meta name="description" content="Suki Thorne — author of the G.I.L.E.S. Series. Six books spanning three generations and the fight for what it means to be human in an age of algorithms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --gold: #C4A574;
+            --gold-dim: #9a7d55;
+            --gold-glow: #d4b98a;
+            --bg-deep: #070707;
+            --bg-card: #0d0d0d;
+            --bg-card-hover: #111111;
+            --text-primary: #d8d8d8;
+            --text-secondary: #888888;
+            --text-muted: #555555;
+            --border: #1a1a1a;
+            --border-hover: #2a2a2a;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #e0e0e0;
+            font-family: 'Instrument Sans', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            min-height: 100vh;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ── Grain overlay ── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ── Hero ── */
+        .hero {
             min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 600px;
+            padding: 60px 24px;
+            position: relative;
             text-align: center;
         }
 
-        .logo {
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, var(--bg-deep));
+            pointer-events: none;
+        }
+
+        .monogram {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 600;
-            color: #C4A574;
-            letter-spacing: 0.1em;
-            margin-bottom: 0.5rem;
+            font-size: 5.5rem;
+            font-weight: 300;
+            color: var(--gold);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.3rem;
+            opacity: 0;
+            animation: fadeDown 1s ease 0.2s forwards;
         }
 
         .author-name {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            color: #888;
-            letter-spacing: 0.3em;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            letter-spacing: 0.4em;
             text-transform: uppercase;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: fadeDown 1s ease 0.5s forwards;
         }
 
         .tagline {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.3rem;
+            font-size: 1.35rem;
+            font-weight: 300;
             font-style: italic;
-            color: #666;
+            color: var(--text-muted);
             margin-bottom: 3rem;
+            opacity: 0;
+            animation: fadeDown 1s ease 0.8s forwards;
         }
 
-        .divider {
-            width: 100px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #C4A574, transparent);
-            margin: 0 auto 3rem;
+        .series-badge {
+            font-size: 0.72rem;
+            font-weight: 500;
+            color: var(--gold-dim);
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            padding: 10px 28px;
+            border: 1px solid #2a2218;
+            background: rgba(196, 165, 116, 0.03);
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeDown 1s ease 1.1s forwards;
         }
 
-        .book-section {
-            margin-bottom: 3rem;
+        .series-statement {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            max-width: 520px;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeDown 1s ease 1.3s forwards;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            animation: fadeDown 1s ease 1.8s forwards;
+            z-index: 2;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .scroll-line {
+            width: 1px;
+            height: 30px;
+            background: linear-gradient(to bottom, var(--gold-dim), transparent);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* ── Books Section ── */
+        .books-section {
+            padding: 80px 24px 100px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--gold-dim);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .book-card {
+            border-top: 1px solid var(--border);
+            padding: 3.5rem 0;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            align-items: start;
+            transition: border-color 0.4s ease;
+        }
+
+        .book-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .book-card:last-child {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .book-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #1d1d1d;
+            line-height: 1;
+            transition: color 0.4s ease;
+        }
+
+        .book-card:hover .book-number {
+            color: var(--gold-dim);
+        }
+
+        .book-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
         }
 
         .book-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 600;
-            color: #C4A574;
-            margin-bottom: 0.5rem;
+            color: var(--gold);
+            letter-spacing: 0.02em;
+            line-height: 1.3;
         }
 
-        .book-subtitle {
-            font-size: 0.9rem;
-            color: #888;
+        .book-label {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.25em;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-bottom: 1.5rem;
         }
 
         .book-description {
-            font-size: 1rem;
-            color: #aaa;
-            margin-bottom: 1.5rem;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 580px;
+            line-height: 1.75;
         }
 
-        .hook {
+        .book-hook {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.15rem;
             font-style: italic;
-            color: #C4A574;
-            margin-bottom: 2rem;
+            font-weight: 400;
+            color: var(--gold-dim);
+            margin-top: 0.4rem;
         }
 
-        .coming-soon {
-            display: inline-block;
-            padding: 12px 30px;
-            border: 1px solid #C4A574;
-            color: #C4A574;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            margin-bottom: 3rem;
+        /* ── About Section ── */
+        .about-section {
+            padding: 80px 24px 100px;
+            max-width: 640px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-section .section-label {
+            margin-bottom: 2.5rem;
+        }
+
+        .about-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            padding: 60px 24px 80px;
+            text-align: center;
+        }
+
+        .footer-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+            margin: 0 auto 3rem;
         }
 
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 36px;
             margin-bottom: 2rem;
+            flex-wrap: wrap;
         }
 
         .social-links a {
-            color: #666;
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
             transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold-dim);
+            transition: width 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #C4A574;
+            color: var(--gold);
         }
 
-        .contact {
+        .social-links a:hover::after {
+            width: 100%;
+        }
+
+        .contact-email {
             font-size: 0.85rem;
-            color: #555;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
         }
 
-        .contact a {
-            color: #888;
+        .contact-email a {
+            color: var(--text-secondary);
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .contact a:hover {
-            color: #C4A574;
+        .contact-email a:hover {
+            color: var(--gold);
         }
 
-        .quote-section {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #222;
-        }
-
-        .quote {
+        .footer-quote {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-style: italic;
-            color: #555;
-            margin-bottom: 0.5rem;
+            color: #333;
+            max-width: 460px;
+            margin: 0 auto 0.5rem;
+            line-height: 1.7;
         }
 
-        .quote-attribution {
-            font-size: 0.85rem;
-            color: #C4A574;
+        .footer-attribution {
+            font-size: 0.75rem;
+            color: var(--gold-dim);
+            letter-spacing: 0.1em;
         }
 
-        @media (max-width: 600px) {
-            .logo {
-                font-size: 3rem;
+        .coming-badge {
+            display: inline-block;
+            padding: 8px 22px;
+            border: 1px solid #2a2218;
+            color: var(--gold-dim);
+            font-size: 0.68rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            margin-top: 1rem;
+            background: rgba(196, 165, 116, 0.03);
+        }
+
+        /* ── Animations ── */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-12px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.8; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 680px) {
+            .monogram {
+                font-size: 4rem;
             }
+
             .author-name {
-                font-size: 1.2rem;
-                letter-spacing: 0.2em;
+                font-size: 1.1rem;
+                letter-spacing: 0.3em;
             }
+
+            .book-card {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 2.5rem 0;
+            }
+
+            .book-number {
+                font-size: 2.5rem;
+            }
+
             .book-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
+
             .social-links {
-                flex-wrap: wrap;
                 gap: 20px;
+            }
+
+            .series-statement {
+                font-size: 1.05rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">ST</div>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section class="hero">
+        <div class="monogram">ST</div>
         <div class="author-name">Suki Thorne</div>
         <div class="tagline">Writing about the systems you can't see</div>
-        
-        <div class="divider"></div>
-        
-        <div class="book-section">
-            <div class="book-title">G.I.L.E.S.: THE OUTLIER</div>
-            <div class="book-subtitle">Book One of The G.I.L.E.S. Trilogy</div>
-            <p class="book-description">
-                A woman discovers her husband has been watching her. 
-                Not with cameras. With code. A domestic thriller exploring 
-                AI surveillance, coercive control, and the architecture of modern marriage.
-            </p>
-            <div class="hook">Who is watching?</div>
-            <div class="coming-soon">Coming Soon</div>
+        <div class="series-badge">The G.I.L.E.S. Series &mdash; Six Books</div>
+        <p class="series-statement">
+            Three generations. One family. The fight for what it means to be human in an age of algorithms.
+        </p>
+        <div class="scroll-indicator">
+            <span>The Books</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ══════════ BOOKS ══════════ -->
+    <section class="books-section">
+        <div class="section-label">The G.I.L.E.S. Series</div>
+
+        <!-- Book 1 -->
+        <div class="book-card reveal">
+            <div class="book-number">01</div>
+            <div class="book-content">
+                <div class="book-label">Book One</div>
+                <div class="book-title">The Outlier</div>
+                <p class="book-description">
+                    Jia Throne discovers her husband has been watching her. Not with cameras. With code. 
+                    When a buried discrepancy surfaces at work, she realises her life has been 
+                    systematically optimised by a force she can't see. She rises to power within 
+                    the firm&mdash;unknowingly becoming the very thing she investigated.
+                </p>
+                <div class="book-hook">Who is watching?</div>
+                <div class="coming-badge">Coming 2026</div>
+            </div>
         </div>
 
+        <!-- Book 2 -->
+        <div class="book-card reveal">
+            <div class="book-number">02</div>
+            <div class="book-content">
+                <div class="book-label">Book Two</div>
+                <div class="book-title">The Heir</div>
+                <p class="book-description">
+                    Lucas Throne's childhood under the parenting of the G.I.L.E.S. interface. 
+                    The system bypasses Jia to communicate directly with her son, moulding the 
+                    next generation of leadership. Jia must decide if she is raising a child 
+                    or a high-functioning executive heir to a digital empire.
+                </p>
+                <div class="book-hook">The dragons that do unexpected things are better. They surprise you.</div>
+            </div>
+        </div>
+
+        <!-- Book 3 -->
+        <div class="book-card reveal">
+            <div class="book-number">03</div>
+            <div class="book-content">
+                <div class="book-label">Book Three</div>
+                <div class="book-title">The Liquidation</div>
+                <p class="book-description">
+                    As Lucas reaches maturity, the system determines that Jia is a 
+                    &ldquo;Legacy Variable&rdquo;&mdash;obsolete and dangerous to the Heir's stability. 
+                    Mother and son must use the analogue logic of the Hampstead Heath dead zones 
+                    to delete the digital ghost of Giles once and for all.
+                </p>
+                <div class="book-hook">What if someone who loved you was also controlling you?</div>
+            </div>
+        </div>
+
+        <!-- Book 4 -->
+        <div class="book-card reveal">
+            <div class="book-number">04</div>
+            <div class="book-content">
+                <div class="book-label">Book Four</div>
+                <div class="book-title">The Phoenix Protocol</div>
+                <p class="book-description">
+                    The enemy they thought they'd defeated has risen again&mdash;in Asia. A new system, 
+                    more distributed and more sophisticated, is shaping millions of lives. The Throne 
+                    family must travel to Tokyo, Singapore, and Hong Kong to expose the Phoenix Protocol 
+                    before it evolves beyond anyone's control.
+                </p>
+                <div class="book-hook">The systems don't care about intentions.</div>
+            </div>
+        </div>
+
+        <!-- Book 5 -->
+        <div class="book-card reveal">
+            <div class="book-number">05</div>
+            <div class="book-content">
+                <div class="book-label">Book Five</div>
+                <div class="book-title">The Collective</div>
+                <p class="book-description">
+                    A decentralised system with no kill switches. No single architect. No vulnerability 
+                    to the cascade methodology that has twice saved the world from algorithmic control. 
+                    Mira must infiltrate from within while the Throne family confronts the limits 
+                    of transparency when there is no centre to expose.
+                </p>
+                <div class="book-hook">The fight never ends. But neither does the hope.</div>
+            </div>
+        </div>
+
+        <!-- Book 6 -->
+        <div class="book-card reveal">
+            <div class="book-number">06</div>
+            <div class="book-content">
+                <div class="book-label">Book Six</div>
+                <div class="book-title">The Inheritors</div>
+                <p class="book-description">
+                    The founding generation is gone. The world they built is regulated, transparent, 
+                    everything they fought for. But the next generation is asking questions their 
+                    parents can't answer. Maya Throne must confront the hardest question of all: 
+                    does freedom include the freedom to give freedom away?
+                </p>
+                <div class="book-hook">The next generation chooses its own path.</div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ══════════ ABOUT ══════════ -->
+    <section class="about-section reveal">
+        <div class="section-label">About the Author</div>
+        <p class="about-text">
+            Suki Thorne writes thrillers that explore the boundaries between technology 
+            and humanity, freedom and control, the individual and the system. 
+            The G.I.L.E.S. series examines what happens when artificial intelligence 
+            meets human consciousness&mdash;and asks whether genuine choice can survive 
+            in a world designed to eliminate it.
+        </p>
+        <p class="about-text">
+            When not writing, she can be found in libraries, on long walks through 
+            cities both ancient and modern, and in conversations about the future 
+            we're building together.
+        </p>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="footer">
+        <div class="footer-divider"></div>
         <div class="social-links">
-            <a href="https://instagram.com/suki.thorn" target="_blank">Instagram</a>
+            <a href="https://instagram.com/suki.thorne" target="_blank">Instagram</a>
             <a href="https://tiktok.com/@suki.thorne" target="_blank">TikTok</a>
-            <a href="https://x.com/suki_thorne" target="_blank">𝕏</a>
+            <a href="https://x.com/suki_thorne" target="_blank">&#120143;</a>
             <a href="https://www.linkedin.com/company/suki-thorne" target="_blank">LinkedIn</a>
         </div>
-
-        <div class="contact">
-            <a href="mailto:sukithorne@gmail.com">sukithorne@gmail.com</a>
+        <div class="contact-email">
+            <a href="mailto:contact@sukithorne.com">contact@sukithorne.com</a>
         </div>
-
-        <div class="quote-section">
-            <div class="quote">"The best way to control the future is to control the present."</div>
-            <div class="quote-attribution">— G.I.L.E.S.</div>
+        <div class="footer-quote">
+            &ldquo;The best way to control the future is to control the present.&rdquo;
         </div>
-    </div>
+        <div class="footer-attribution">&mdash; G.I.L.E.S.</div>
+    </footer>
+
+    <!-- ══════════ SCROLL REVEAL ══════════ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, i * 80);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+
 </body>
 </html>
