@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Suki Thorne | Thriller Author</title>
-    <meta name="description" content="Suki Thorne — author of the G.I.L.E.S. Series. Six books spanning three generations and the fight for what it means to be human in an age of algorithms.">
+    <meta name="description" content="Suki Thorne, author of the G.I.L.E.S. Series. Six books spanning three generations and the fight for what it means to be human in an age of algorithms.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,18 +23,15 @@
             --border-hover: #2a2a2a;
         }
 
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
         html {
             scroll-behavior: smooth;
         }
-
 
         body {
             font-family: 'Instrument Sans', sans-serif;
@@ -44,7 +41,6 @@
             line-height: 1.7;
             overflow-x: hidden;
         }
-
 
         /* ── Grain overlay ── */
         body::before {
@@ -56,7 +52,6 @@
             pointer-events: none;
             z-index: 9999;
         }
-
 
         /* ── Hero ── */
         .hero {
@@ -70,7 +65,6 @@
             text-align: center;
         }
 
-
         .hero::after {
             content: '';
             position: absolute;
@@ -82,7 +76,6 @@
             pointer-events: none;
         }
 
-
         .monogram {
             font-family: 'Cormorant Garamond', serif;
             font-size: 5.5rem;
@@ -93,7 +86,6 @@
             opacity: 0;
             animation: fadeDown 1s ease 0.2s forwards;
         }
-
 
         .author-name {
             font-family: 'Cormorant Garamond', serif;
@@ -107,7 +99,6 @@
             animation: fadeDown 1s ease 0.5s forwards;
         }
 
-
         .tagline {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.35rem;
@@ -118,7 +109,6 @@
             opacity: 0;
             animation: fadeDown 1s ease 0.8s forwards;
         }
-
 
         .series-badge {
             font-size: 0.72rem;
@@ -134,7 +124,6 @@
             animation: fadeDown 1s ease 1.1s forwards;
         }
 
-
         .series-statement {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.15rem;
@@ -145,7 +134,6 @@
             opacity: 0;
             animation: fadeDown 1s ease 1.3s forwards;
         }
-
 
         .scroll-indicator {
             position: absolute;
@@ -161,14 +149,12 @@
             z-index: 2;
         }
 
-
         .scroll-indicator span {
             font-size: 0.65rem;
             letter-spacing: 0.3em;
             text-transform: uppercase;
             color: var(--text-muted);
         }
-
 
         .scroll-line {
             width: 1px;
@@ -177,14 +163,12 @@
             animation: pulse 2s ease-in-out infinite;
         }
 
-
         /* ── Books Section ── */
         .books-section {
             padding: 80px 24px 100px;
             max-width: 900px;
             margin: 0 auto;
         }
-
 
         .section-label {
             font-size: 0.68rem;
@@ -196,7 +180,6 @@
             margin-bottom: 4rem;
         }
 
-
         .book-card {
             border-top: 1px solid var(--border);
             padding: 3.5rem 0;
@@ -207,16 +190,13 @@
             transition: border-color 0.4s ease;
         }
 
-
         .book-card:hover {
             border-color: var(--border-hover);
         }
 
-
         .book-card:last-child {
             border-bottom: 1px solid var(--border);
         }
-
 
         .book-number {
             font-family: 'Cormorant Garamond', serif;
@@ -227,18 +207,15 @@
             transition: color 0.4s ease;
         }
 
-
         .book-card:hover .book-number {
             color: var(--gold-dim);
         }
-
 
         .book-content {
             display: flex;
             flex-direction: column;
             gap: 0.8rem;
         }
-
 
         .book-title {
             font-family: 'Cormorant Garamond', serif;
@@ -249,7 +226,6 @@
             line-height: 1.3;
         }
 
-
         .book-label {
             font-size: 0.7rem;
             font-weight: 500;
@@ -258,7 +234,6 @@
             text-transform: uppercase;
         }
 
-
         .book-description {
             font-size: 0.95rem;
             font-weight: 400;
@@ -266,7 +241,6 @@
             max-width: 580px;
             line-height: 1.75;
         }
-
 
         .book-hook {
             font-family: 'Cormorant Garamond', serif;
@@ -277,7 +251,6 @@
             margin-top: 0.4rem;
         }
 
-
         /* ── About Section ── */
         .about-section {
             padding: 80px 24px 100px;
@@ -286,11 +259,9 @@
             text-align: center;
         }
 
-
         .about-section .section-label {
             margin-bottom: 2.5rem;
         }
-
 
         .about-text {
             font-family: 'Cormorant Garamond', serif;
@@ -301,13 +272,11 @@
             margin-bottom: 1.5rem;
         }
 
-
         /* ── Footer ── */
         .footer {
             padding: 60px 24px 80px;
             text-align: center;
         }
-
 
         .footer-divider {
             width: 60px;
@@ -316,7 +285,6 @@
             margin: 0 auto 3rem;
         }
 
-
         .social-links {
             display: flex;
             justify-content: center;
@@ -324,7 +292,6 @@
             margin-bottom: 2rem;
             flex-wrap: wrap;
         }
-
 
         .social-links a {
             color: var(--text-muted);
@@ -335,7 +302,6 @@
             transition: color 0.3s ease;
             position: relative;
         }
-
 
         .social-links a::after {
             content: '';
@@ -348,16 +314,13 @@
             transition: width 0.3s ease;
         }
 
-
         .social-links a:hover {
             color: var(--gold);
         }
 
-
         .social-links a:hover::after {
             width: 100%;
         }
-
 
         .contact-email {
             font-size: 0.85rem;
@@ -365,18 +328,15 @@
             margin-bottom: 3rem;
         }
 
-
         .contact-email a {
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
-
         .contact-email a:hover {
             color: var(--gold);
         }
-
 
         .footer-quote {
             font-family: 'Cormorant Garamond', serif;
@@ -388,13 +348,18 @@
             line-height: 1.7;
         }
 
-
         .footer-attribution {
             font-size: 0.75rem;
             color: var(--gold-dim);
             letter-spacing: 0.1em;
         }
 
+        .footer-imprint {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            margin-top: 3rem;
+        }
 
         .coming-badge {
             display: inline-block;
@@ -409,19 +374,16 @@
             background: rgba(196, 165, 116, 0.03);
         }
 
-
         /* ── Animations ── */
         @keyframes fadeDown {
             from { opacity: 0; transform: translateY(-12px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-
         @keyframes pulse {
             0%, 100% { opacity: 0.3; }
             50% { opacity: 0.8; }
         }
-
 
         .reveal {
             opacity: 0;
@@ -429,12 +391,10 @@
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
 
-
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
 
         /* ── Responsive ── */
         @media (max-width: 680px) {
@@ -442,12 +402,10 @@
                 font-size: 4rem;
             }
 
-
             .author-name {
                 font-size: 1.1rem;
                 letter-spacing: 0.3em;
             }
-
 
             .book-card {
                 grid-template-columns: 1fr;
@@ -455,21 +413,17 @@
                 padding: 2.5rem 0;
             }
 
-
             .book-number {
                 font-size: 2.5rem;
             }
-
 
             .book-title {
                 font-size: 1.4rem;
             }
 
-
             .social-links {
                 gap: 20px;
             }
-
 
             .series-statement {
                 font-size: 1.05rem;
@@ -479,13 +433,12 @@
 </head>
 <body>
 
-
     <!-- ══════════ HERO ══════════ -->
     <section class="hero">
         <div class="monogram">ST</div>
         <div class="author-name">Suki Thorne</div>
         <div class="tagline">Writing about the systems you can't see</div>
-        <div class="series-badge">The G.I.L.E.S. Series &mdash; Six Books</div>
+        <div class="series-badge">The G.I.L.E.S. Series: Six Books</div>
         <p class="series-statement">
             Three generations. One family. The fight for what it means to be human in an age of algorithms.
         </p>
@@ -495,11 +448,9 @@
         </div>
     </section>
 
-
     <!-- ══════════ BOOKS ══════════ -->
     <section class="books-section">
         <div class="section-label">The G.I.L.E.S. Series</div>
-
 
         <!-- Book 1 -->
         <div class="book-card reveal">
@@ -508,16 +459,18 @@
                 <div class="book-label">Book One</div>
                 <div class="book-title">The Outlier</div>
                 <p class="book-description">
-                    Jia Throne discovers her husband has been watching her. Not with cameras. With code. 
-                    When a buried discrepancy surfaces at work, she realises her life has been 
-                    systematically optimised by a force she can't see. She rises to power within 
-                    the firm, unknowingly becoming the very thing she investigated.
+                    Jia Vraign is the one a City firm calls when the numbers don't add up.
+                    Then her own stop adding up: approvals she never made, emails opened before
+                    she has read them, a power cut in a street that never has one. She keeps her
+                    own record and goes looking for the hand behind it. By the time she sees the
+                    woman she blames, the family has lost the house and is moving from campsite
+                    to cottage with their son, and the woman has been watching him far longer
+                    than Jia knew.
                 </p>
                 <div class="book-hook">Who is watching?</div>
-                <div class="coming-badge">Coming 2026</div>
+                <div class="coming-badge">Coming 2027</div>
             </div>
         </div>
-
 
         <!-- Book 2 -->
         <div class="book-card reveal">
@@ -526,15 +479,16 @@
                 <div class="book-label">Book Two</div>
                 <div class="book-title">Blood Right</div>
                 <p class="book-description">
-                    Lucas Throne's childhood under the parenting of the G.I.L.E.S. interface. 
-                    The system bypasses Jia to communicate directly with her son, moulding the 
-                    next generation of leadership. Jia must decide if she is raising a child 
-                    or a high-functioning executive heir to a digital empire.
+                    A package arrives with Lucas Vraign's name on it in handwriting and no return
+                    address. Inside is a file that has been open since the year he was born. Every
+                    teacher. Every kindness. Every friend. It reaches him at Cambridge. What he does
+                    with it will hurt his parents more than the truth did the first time, and it will
+                    put an old woman, thirty years into collecting the people this was done to, in
+                    front of the only people who can still stop it.
                 </p>
-                <div class="book-hook">The dragons that do unexpected things are better. They surprise you.</div>
+                <div class="book-hook">Dragons that do unexpected things are better. People too.</div>
             </div>
         </div>
-
 
         <!-- Book 3 -->
         <div class="book-card reveal">
@@ -543,32 +497,31 @@
                 <div class="book-label">Book Three</div>
                 <div class="book-title">The Exposure</div>
                 <p class="book-description">
-                    As Lucas reaches maturity, the system determines that Jia is a 
-                    &ldquo;Legacy Variable&rdquo;, obsolete and dangerous to the Heir's stability. 
-                    Mother and son must use the analogue logic of the Hampstead Heath dead zones 
-                    to delete the digital ghost of G.I.L.E.S. once and for all.
+                    After Holborn, eight people are ready to say what was done to them, and a
+                    select committee has agreed to hear them. Then the visits begin: kind people
+                    with forms, taking the eight apart one at a time. The Vraigns go to them first,
+                    door by door. And Lucas, starting work at a company outside Reading, finds the
+                    first name on his own employer's call sheet.
                 </p>
-                <div class="book-hook">What if someone who loved you was also controlling you?</div>
+                <div class="book-hook">Eight people spoke. Now they have to reach the door.</div>
             </div>
         </div>
-
 
         <!-- Book 4 -->
         <div class="book-card reveal">
             <div class="book-number">04</div>
             <div class="book-content">
                 <div class="book-label">Book Four</div>
-                <div class="book-title">Ash And Return</div>
+                <div class="book-title">Ash and Return</div>
                 <p class="book-description">
-                    The enemy they thought they'd defeated has risen again, in Asia. A new system, 
-                    more distributed and more sophisticated, is shaping millions of lives. The Throne 
-                    family must travel to Tokyo, Singapore, and Hong Kong to expose the Phoenix Protocol 
+                    The enemy they thought they'd defeated has risen again, in Asia. A new system,
+                    more distributed and more sophisticated, is shaping millions of lives. The Vraign
+                    family must travel to Tokyo, Singapore, and Hong Kong to expose the Phoenix Protocol
                     before it evolves beyond anyone's control.
                 </p>
                 <div class="book-hook">The systems don't care about intentions.</div>
             </div>
         </div>
-
 
         <!-- Book 5 -->
         <div class="book-card reveal">
@@ -577,67 +530,62 @@
                 <div class="book-label">Book Five</div>
                 <div class="book-title">The Covenant</div>
                 <p class="book-description">
-                    A decentralised system with no kill switches. No single architect. No vulnerability 
-                    to the cascade methodology that has twice saved the world from algorithmic control. 
-                    Mira must infiltrate from within while the Throne family confronts the limits 
+                    A decentralised system with no kill switches. No single architect. No vulnerability
+                    to the cascade methodology that has twice saved the world from algorithmic control.
+                    Vicky must infiltrate from within while the Vraign family confronts the limits
                     of transparency when there is no centre to expose.
                 </p>
                 <div class="book-hook">The fight never ends. But neither does the hope.</div>
             </div>
         </div>
 
-
         <!-- Book 6 -->
         <div class="book-card reveal">
             <div class="book-number">06</div>
             <div class="book-content">
                 <div class="book-label">Book Six</div>
-                <div class="book-title">The Inheritors</div>
+                <div class="book-title">Born to It</div>
                 <p class="book-description">
-                    The founding generation is gone. The world they built is regulated, transparent, 
-                    everything they fought for. But the next generation is asking questions their 
-                    parents can't answer. Maya Throne must confront the hardest question of all: 
+                    The founding generation is gone. The world they built is regulated, transparent,
+                    everything they fought for. But the next generation is asking questions their
+                    parents can't answer. Maya Vraign must confront the hardest question of all:
                     does freedom include the freedom to give freedom away?
                 </p>
                 <div class="book-hook">The next generation chooses its own path.</div>
             </div>
         </div>
 
-
     </section>
-
 
     <!-- ══════════ ABOUT ══════════ -->
     <section class="about-section reveal">
         <div class="section-label">About the Author</div>
         <p class="about-text">
-            Suki Thorne writes thrillers that explore the boundaries between technology 
-            and humanity, freedom and control, the individual and the system. 
-            The G.I.L.E.S. series examines what happens when artificial intelligence 
-            meets human consciousness, and asks whether genuine choice can survive 
-            in a world designed to eliminate it.
+            Suki Thorne writes about the lies that hold a family together.
+            The G.I.L.E.S. series begins with one woman discovering that her marriage,
+            her career, and her son's childhood were shaped by people she never chose,
+            and asking: if the care was real, does it matter that the instructions were too?
         </p>
     </section>
-
 
     <!-- ══════════ FOOTER ══════════ -->
     <footer class="footer">
         <div class="footer-divider"></div>
         <div class="social-links">
-            <a href="https://instagram.com/suki.thorne" target="_blank">Instagram</a>
-            <a href="https://tiktok.com/@suki.thorne" target="_blank">TikTok</a>
-            <a href="https://x.com/suki_thorne" target="_blank">&#120143;</a>
-            <a href="https://www.linkedin.com/company/suki-thorne" target="_blank">LinkedIn</a>
+            <a href="https://instagram.com/suki.thorne" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@suki.thorne" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://x.com/suki_thorne" target="_blank" rel="noopener">&#120143;</a>
+            <a href="https://www.linkedin.com/company/suki-thorne" target="_blank" rel="noopener">LinkedIn</a>
         </div>
         <div class="contact-email">
             <a href="mailto:contact@sukithorne.com">contact@sukithorne.com</a>
         </div>
         <div class="footer-quote">
-            &ldquo;The best way to control the future is to control the present.&rdquo;
+            "I wake up married to a man I'm not sure I know any more."
         </div>
-        <div class="footer-attribution">&mdash; G.I.L.E.S.</div>
+        <div class="footer-attribution">The Outlier</div>
+        <div class="footer-imprint">Published by Oak Shelf Press.</div>
     </footer>
-
 
     <!-- ══════════ SCROLL REVEAL ══════════ -->
     <script>
@@ -653,11 +601,9 @@
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         });
     </script>
-
 
 </body>
 </html>
